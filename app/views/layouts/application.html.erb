@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BookCollectionApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <%= link_to 'Home', books_path %>
+      </nav>
+    </header>
+
+    <main>
+      <% flash.each do |key, message| %>
+        <div class="flash <%= key %>">
+          <%= message %>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </main>
+  </body>
+</html>
